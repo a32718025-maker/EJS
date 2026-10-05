@@ -4,11 +4,17 @@ const app=express();
 const port=8000;
 
 app.set("view engine","ejs");
-app.get("/",(req,res){
-    res.send("this is root");
-}
+
+app.get("/",(req,res)=>{
+    res.render("home");
+});
+
+app.get("/hello",(req,res)=>{
+    res.send("hello");
+});
+
 
 
 app.listen(port, () => {
-    console.log("listening on port ${port}");
+    console.log(`listening on port ${port}`);
 });
