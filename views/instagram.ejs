@@ -7,8 +7,18 @@
 </head>
 <body>
     <h2>This page belongs to @<%= username %></h2>
+    const followers = {"adam","bob","steve","abc"};
     <button>follow</button>
     <button>Message</button>
+
+    <h3> Accounts that follow you</h3>
+    <ul>
+        <%  for(let name of followers) {%>      <%# passing loops %>
+            <li><%= name %></li>  
+            
+        <% } %>
+
+    </ul>
     
 </body>
 </html>
