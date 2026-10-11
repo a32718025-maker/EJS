@@ -15,6 +15,11 @@ app.get("/hello",(req,res)=>{
     res.send("hello");
 });
 
+app.get("/ig/:username",(req,res)=>{  //adding instagram.ejs
+    let {username}=req.params;
+    res.render("instagram.ejs",{username});
+});
+
 
 app.get("/:username,/:id",(req,res)=>{  // path parameters
     let{ username, id }=req.params;
@@ -35,7 +40,7 @@ app.get("/rolldice",(req,res)=>{              //passing data to ejs
     let diceVal=Math.floor(Math.random()*6)+1;
     res.render("rolldice.ejs",{diceVal});
 
-})
+});
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
