@@ -16,9 +16,12 @@ app.get("/hello",(req,res)=>{
 });
 
 app.get("/ig/:username",(req,res)=>{  //adding instagram.ejs
-    const followers = ["adam","bob","steve","abc"];
-    let {username}=req.params;
-    res.render("instagram.ejs",{username,followers});
+    //const followers = ["adam","bob","steve","abc"];
+   // let {username}=req.params;
+  //  res.render("instagram.ejs",{username,followers});
+
+  const instaData=require("./data.json");
+  console.log("instaram.ejs", {data:instaData});
 });
 
 
