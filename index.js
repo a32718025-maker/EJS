@@ -1,11 +1,15 @@
-const express= require("express");
-const app=express();
-const path=require("path");
+const express= require("express"); //imports Express framework it helps to create a server and configure it
+const app=express(); //create an express application
+const path=require("path"); //import built-in path that help us to construct file and dir paths
 
-const port=8000;
+const port=8000;     //our servr will run on port 8000
 
-app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"/views"));
+ //app.use(express.static("public"));  // tell=files insidethe  public  folder accesible to the browser
+app.use(express.static(path.join(__dirname,"/public/js"))); //tell express to make static files (css,imga and js) inside the public folder accesible to the browser
+app.use(express.static(path.join(__dirname,"/public/css")));//public/js  folder accesible to the browser by specifying their directory path
+
+app.set("view engine","ejs");    //express mein ejs template ko set krna (html ke andar js code likh ske)
+app.set("views",path.join(__dirname,"/views")); //set the template direc
 
 app.get("/",(req,res)=>{
     res.render("home");
@@ -27,7 +31,7 @@ app.get("/ig/:username",(req,res)=>{  //adding instagram.ejs
   if(data){
   res.render("instaram.ejs", {data});
   }else{
-    
+
 
   }
 });

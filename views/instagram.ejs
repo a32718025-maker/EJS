@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
-    <STYLE>
-        img{
-            height:100px;
-            width:100px;
-        }
-    </STYLE>
+<link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
     <h2>This page belongs to @<%= data.name %></h2>
@@ -24,9 +20,8 @@
     <img src="<%= post.image %>" alt="some img">
     <p>
         likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp comments: <%= post.comments %></p>
-
-
-
     
 </body>
+<script src="/app.js"></script>
+
 </html>
