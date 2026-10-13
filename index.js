@@ -27,16 +27,14 @@ app.get("/ig/:username",(req,res)=>{  //adding instagram.ejs
 
   const instaData=require("./data.json");
   const data= instaData[username];
-  console.log(data);
+  
   if(data){
   res.render("instaram.ejs", {data});
   }else{
-
-
+    
+res.render("error.ejs");
   }
 });
-
-
 app.get("/:username,/:id",(req,res)=>{  // path parameters
     let{ username, id }=req.params;
     let htmlStr=`<h1> welocome to the page of @${username}!</h1>`;
